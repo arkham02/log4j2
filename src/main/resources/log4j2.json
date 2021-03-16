@@ -6,11 +6,15 @@
     "loggers": {
       "root": {
         "level": "debug",
-        "AppenderRef": [{
-          "ref": "STDOUT"
-        },{
-          "ref": "RollingFileLogger"
-        }]
+        "AppenderRef": [
+          {
+            "ref": "STDOUT"
+          },
+          {
+            "level": "debug",
+            "ref": "RollingFileLogger"
+          }
+        ]
       }
     },
     "appenders": {
@@ -23,7 +27,7 @@
       "RollingFile": {
         "name": "RollingFileLogger",
         "filename": "logs/app.log",
-        "filePattern": "logs/app-%d{yyyy-MM-dd}.log",
+        "filePattern": "logs/app-%d{MM-dd-yy-HH-mm-ss}.log",
         "PatternLayout": {
           "pattern": "%d [%t] %-5p %c - %m%n"
         },
@@ -33,7 +37,6 @@
             "modulate": "true"
           },
           "SizeBasedTriggeringPolicy": {
-            "filePattern": "logs/app-%d{MM-dd-yy-HH-mm-ss}.log",
             "size": "1 KB"
           }
         }

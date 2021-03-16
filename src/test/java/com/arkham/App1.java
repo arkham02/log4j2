@@ -9,7 +9,7 @@ public class App1 {
 
 	public static void main(String[] args) {
 
-		for (int i = 0; i < 100; i++) {
+		for (int i = 0; i < 500; i++) {
 			logger.debug("Hello from Log4j 2");
 			logger.debug("This is a Debug Message!");
 			logger.info("This is an Info Message!");
