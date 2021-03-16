@@ -1,0 +1,42 @@
+{
+  "configuration": {
+    "status": "error",
+    "name": "Log4j2JSONConfig",
+    "packages": "com.arkham",
+    "loggers": {
+      "root": {
+        "level": "debug",
+        "AppenderRef": [{
+          "ref": "STDOUT"
+        },{
+          "ref": "RollingFileLogger"
+        }]
+      }
+    },
+    "appenders": {
+      "Console": {
+        "name": "STDOUT",
+        "PatternLayout": {
+          "pattern": "%d [%t] %-5p %c - %m%n"
+        }
+      },
+      "RollingFile": {
+        "name": "RollingFileLogger",
+        "filename": "logs/app.log",
+        "filePattern": "app-%d{yyyy-MM-dd}.log",
+        "PatternLayout": {
+          "pattern": "%d [%t] %-5p %c - %m%n"
+        },
+        "Policies": {
+          "TimeBasedTriggeringPolicy": {
+            "interval": "1",
+            "modulate": "true"
+          },
+          "SizeBasedTriggeringPolicy": {
+            "size": "1 Kb"
+          }
+        }
+      }
+    }
+  }
+}

@@ -1,0 +1,13 @@
+First there was log4j, then there was logback, then came log4j2 which improved upon these 2
+Each of these implement slf4j. so we can easily replace any of these without affecting the code
+remember: loggers, appenders and layout
+
+https://www.studytonight.com/post/log4j2-setup-with-configuration-in-json-file-java-example#
+
+log4j2.json needs to be placed in src/test/resources
+
+Rolling file:
+
+/* In the above JSON configuration we have set the rolling file appender policy for size as 1 Kb
+just to show you how a file with old logs is created once the size exceeds 1 Kb.
+ Ideally you should keep this value in MBs.*/
