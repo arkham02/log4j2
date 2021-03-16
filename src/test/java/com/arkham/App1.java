@@ -9,10 +9,13 @@ public class App1 {
 
 	public static void main(String[] args) {
 
-		logger.debug("Hello from Log4j 2");
-		logger.debug("This is a Debug Message!");
-		logger.info("This is an Info Message!");
-		logger.error("And here comes the Error Message!", new RuntimeException("RunRunRun"));
+		for (int i = 0; i < 100; i++) {
+			logger.debug("Hello from Log4j 2");
+			logger.debug("This is a Debug Message!");
+			logger.info("This is an Info Message!");
+			logger.error("And here comes the Error Message!", new RuntimeException("RunRunRun"));
+		}
+
 		
 	}
 }

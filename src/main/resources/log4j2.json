@@ -23,7 +23,7 @@
       "RollingFile": {
         "name": "RollingFileLogger",
         "filename": "logs/app.log",
-        "filePattern": "app-%d{yyyy-MM-dd}.log",
+        "filePattern": "logs/app-%d{yyyy-MM-dd}.log",
         "PatternLayout": {
           "pattern": "%d [%t] %-5p %c - %m%n"
         },
@@ -33,7 +33,8 @@
             "modulate": "true"
           },
           "SizeBasedTriggeringPolicy": {
-            "size": "1 Kb"
+            "filePattern": "logs/app-%d{MM-dd-yy-HH-mm-ss}.log",
+            "size": "1 KB"
           }
         }
       }

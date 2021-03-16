@@ -1,0 +1,12 @@
+2021-03-16 13:57:46,505 [main] DEBUG com.arkham.App1 - Hello from Log4j 2
+2021-03-16 13:57:46,558 [main] DEBUG com.arkham.App1 - This is a Debug Message!
+2021-03-16 13:57:46,559 [main] INFO  com.arkham.App1 - This is an Info Message!
+2021-03-16 13:57:46,559 [main] ERROR com.arkham.App1 - And here comes the Error Message!
+java.lang.RuntimeException: RunRunRun
+	at com.arkham.App1.main(App1.java:16) [test-classes/:?]
+2021-03-16 13:57:46,559 [main] DEBUG com.arkham.App1 - Hello from Log4j 2
+2021-03-16 13:57:46,559 [main] DEBUG com.arkham.App1 - This is a Debug Message!
+2021-03-16 13:57:46,560 [main] INFO  com.arkham.App1 - This is an Info Message!
+2021-03-16 13:57:46,560 [main] ERROR com.arkham.App1 - And here comes the Error Message!
+java.lang.RuntimeException: RunRunRun
+	at com.arkham.App1.main(App1.java:16) [test-classes/:?]

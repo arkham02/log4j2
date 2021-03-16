@@ -3,11 +3,49 @@ Each of these implement slf4j. so we can easily replace any of these without aff
 remember: loggers, appenders and layout
 
 https://www.studytonight.com/post/log4j2-setup-with-configuration-in-json-file-java-example#
+https://www.boraji.com/log4j-2-json-configuration-example
+https://www.boraji.com/log4j-2-rollingfileappender-example
 
 log4j2.json needs to be placed in src/test/resources
 
 Rolling file:
 
+
+
+RollingFile appender can be used to configure the Log4j2 to create new files
+by setting rules when to create a new file,
+this can either be a time related rule/policy of size related policy
+
+PatternLayout - is for how we are printing inside the file
+
+    "RollingFile": {
+        "name": "RollingFileLogger",
+        "filename": "logs/app.log",
+        "filePattern": "logs/app-%d{yyyy-MM-dd}.log",
+        "PatternLayout": {
+          "pattern": "%d [%t] %-5p %c - %m%n"
+        },
+        "Policies": {
+          "TimeBasedTriggeringPolicy": {
+            "interval": "1",
+            "modulate": "true"
+          },
+          "SizeBasedTriggeringPolicy": {
+            "filePattern": "logs/app-%d{MM-dd-yy-HH-mm-ss}.log",
+            "size": "1 KB"
+          }
+        }
+
 /* In the above JSON configuration we have set the rolling file appender policy for size as 1 Kb
 just to show you how a file with old logs is created once the size exceeds 1 Kb.
  Ideally you should keep this value in MBs.*/
+
+ Notice the FileNamePattern property.
+  It defines the name pattern for rolled over files..
+ For example, pattern '{MM-dd-yyyy-HH}' will rollover log file every hour.
+
+ In given example, appender is able to refer the file name pattern
+ and time based rollover strategy using filePattern attribute
+
+ We provided a different filePattern to SizeBasedTriggeringPolicy
+ TimeBasedTriggeringPolicy- based on the main file pattern, it will roll over everyday
